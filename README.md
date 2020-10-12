@@ -4,33 +4,35 @@
 
 #### Ivan Company
 
-#### Data Analytics Bootcamp - Project module 2
+#### Data Analytics Bootcamp - Project module 3
 
 
 ## **Overview**
-In this project, we have analyzed in depth the data contained in our file "diamonds_train.csv" to better understand how to know the price of a diamond for its different qualities and dimensions. 
+In this project, after having analyzed the diamonds in the previous module, we are going to create a Machine Learning model to find out the price of a diamond.
 
-And we will also be better prepared to win the competition of module 3 !!
+For them we are going to create new columns in our diamond DF with the new characteristics that we have detected, such as the volume of the diamond, shape, the logarithm of carat ...
+
+Using an **"LGBMRegressor"** and **"RandomizedSearchCV"** model I was able to obtain the best hyperparameters with which I obtained the lowest RMSE value of the kaggle competition and I was **First** of my course!!
 
 
 ## **Data**
 
-* [.csv Dataset](http://www.potacho.com/files/ironhack/diamonds_train.csv)
+* [.csv Dataset](https://www.kaggle.com/c/dataptmad0420/data)
 
-The dataset is the diamonds_train.csv file, with ten columns where you can see all the information about each diamond. 
+The dataset are the diamonds_train.csv, with ten columns where you can see all the information about each diamond, and diamonds_predict.csv, where we have the information of the diamonds that we have to predict the value. 
 
-We have 40.455 diamonds in our csv.
+We have 40.455 diamonds in our diamonds_train.csv and 13.485 diamonds in our diamonds_predict.csv
 
 
 ## **Requirements**
 You need to have Python installed with the following libraries:
    - Pandas
     
-   - matplotlib.pyplot
-
-   - plotly.express 
+   - numpy
     
-   - seaborn
+   - lightgbm
+   
+   - scikit-learn   
 
 
 You have more information in the file: requirements.txt
@@ -43,21 +45,15 @@ You have more information in the file: requirements.txt
     ├── requeriments.txt
     ├── README.md
     ├── notebooks
-    │   └──data_analysis_report.ipynb
+    │   └──diamond_model.ipynb
+    ├── submissions
     └── data
         └── diamonds_train.csv
+        └── diamonds_predict.csv
 ```
 
-## **Analysis with Tableu**
-After analyzing and understanding how the price of a diamond changes, we have created an interactive dashboard in Tableau. 
-
-You can see it at the following link:
-
-* [Diamonds_analysis_tableau](https://public.tableau.com/profile/ivan5141#!/vizhome/ih_datamadpt0420_project_m2_15962180365450/Dashboard)
-
-
-## **Hypothesis Testing**
-We have performed 2 tests to learn more about our diamond database. In the first, we have tested whether the prices in our sample are significantly different from 4000. In the second, we have tested whether the group 1 of diamonds (Very Good cut + color I) is significantly different from the group 2(Very Good cut + color J).
+## **Kaggle competition**
+You can see the Kaggle competicion in this [link](https://www.kaggle.com/c/dataptmad0420/overview)
 
 ## **Next steps:**
-- We can analyze how the price varies based on two or more variables simultaneously, to better understand how to set the price of a diamond.
+- We can cluster the diamonds with kMeans or DBSCAN to better group the diamonds according to their characteristics and then train the model with that information to improve the prediction of the value of each diamond.
